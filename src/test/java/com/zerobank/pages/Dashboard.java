@@ -7,12 +7,14 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Dashboard extends BasePage{
 
 
     @FindBy(id= "account_summary_tab")
     public WebElement accountSummaryModule;
+
 
     public String dashboardDefaultTitle = "Zero - Account Summary";
 
@@ -36,4 +38,5 @@ public class Dashboard extends BasePage{
 
         Driver.get().findElement(By.xpath("//a[.='"+module+"']")).click();
     }
+
 }

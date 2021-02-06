@@ -37,7 +37,6 @@ public class Login extends BasePage{
         usernameBox.sendKeys(ConfigurationReader.get("username"));
         passwordBox.sendKeys(ConfigurationReader.get("password"));
         singIn.click();
-        Thread.sleep(5000);
         securityAlert();
     }
 
