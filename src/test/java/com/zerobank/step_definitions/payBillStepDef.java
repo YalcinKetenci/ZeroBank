@@ -1,11 +1,9 @@
 package com.zerobank.step_definitions;
 
 import com.zerobank.pages.PayBills;
-import com.zerobank.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
 
 public class payBillStepDef {
@@ -59,14 +57,24 @@ public class payBillStepDef {
     }
 
 
-    @Then("Please fill out this field message! should be displayed")
-    public void please_fill_out_this_field_message_should_be_displayed() {
+    @Then("Please fill out this field message! should be displayed for amount")
+    public void please_fill_out_this_field_message_should_be_displayed_for_amount() {
 
-        //Alert alert =  Driver.get().switchTo().alert();
-        //String actualResult = alert.getText();
         String actualResult = new PayBills().amountTextBox.getAttribute("validationMessage");
         String expectedResult = "Please fill in this field.";
         Assert.assertEquals(expectedResult,actualResult);
 
+    }
+
+    @When("the user enter {string} as a date")
+    public void the_user_enter_as_a_date(String string) {
+        new PayBills().dateBox.sendKeys(string);
+    }
+
+    @Then("Please fill out this field message! should be displayed for date")
+    public void please_fill_out_this_field_message_should_be_displayed_for_date() {
+        String actualResult = new PayBills().dateBox.getAttribute("validationMessage");
+        String expectedResult = "Please fill in this field.";
+        Assert.assertEquals(expectedResult,actualResult);
     }
 }

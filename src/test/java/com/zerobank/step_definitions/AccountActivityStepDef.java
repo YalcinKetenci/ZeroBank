@@ -12,10 +12,13 @@ import java.util.List;
 
 public class AccountActivityStepDef {
 
+    public String module ;
     @When("the user click {string} module")
     public void the_user_click_module(String string) {
        new Dashboard().goToModule(string);
+       module = string;
     }
+
 
     @Then("In the Account drop down default option should be {string}")
     public void in_the_Account_drop_down_default_option_should_be(String string) {
