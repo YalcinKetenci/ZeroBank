@@ -1,14 +1,8 @@
 package com.zerobank.pages;
 
-import com.zerobank.step_definitions.AccountActivityStepDef;
 import com.zerobank.utilities.ConfigurationReader;
 import com.zerobank.utilities.Driver;
-import io.cucumber.java.an.E;
-import io.cucumber.java.cs.Ale;
-import org.junit.experimental.theories.Theories;
 import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.firefox.ProfilesIni;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
