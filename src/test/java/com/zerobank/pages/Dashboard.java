@@ -19,24 +19,8 @@ public class Dashboard extends BasePage{
     public String dashboardDefaultTitle = "Zero - Account Summary";
 
     public void goToModule(String moduleName){
-        String module ="";
-        String[] str = moduleName.split(" ");
+        Driver.get().findElement(By.xpath("//a[.='"+moduleName+"']")).click();
 
-        if (str.length>0){
-            for (int i = 0; i < str.length; i++) {
-                module += ""+str[i].charAt(0);
-                module+= module.toUpperCase();
-                module+=str[i].substring(1).toLowerCase();
-            }
-        }else{
-            module += moduleName.charAt(0);
-            module+= module.toUpperCase();
-            module+=moduleName.substring(1).toLowerCase();
-        }
-
-        module.trim();
-
-        Driver.get().findElement(By.xpath("//a[.='"+module+"']")).click();
     }
 
 }

@@ -34,10 +34,18 @@ public class Login extends BasePage{
 
     public void login() throws InterruptedException {
         signInBtn.click();
+        Thread.sleep(2000);
         usernameBox.sendKeys(ConfigurationReader.get("username"));
         passwordBox.sendKeys(ConfigurationReader.get("password"));
         singIn.click();
-        securityAlert();
+
+        switch (ConfigurationReader.get("browser"))
+
+        try {
+            securityAlert();
+        }catch (Exception e){
+
+        }
     }
 
 
