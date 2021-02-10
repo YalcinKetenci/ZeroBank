@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         glue = "com/zerobank/step_definitions",
         dryRun = false,
         //dryRun = true,
-        tags = "@accountActivityNav"
+        tags = "@wip"
 )
 
 public class CukesRunner {

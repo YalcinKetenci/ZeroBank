@@ -6,17 +6,19 @@ import com.zerobank.utilities.BrowserUtils;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.List;
+import java.util.*;
 
 public class AccountActivityStepDef {
 
     public String module ;
     @When("the user click {string} module")
-    public void the_user_click_module(String string) {
+    public void the_user_click_module(String string) throws InterruptedException {
        new Dashboard().goToModule(string);
        module = string;
+
     }
 
 
@@ -30,7 +32,16 @@ public class AccountActivityStepDef {
     @Then("Account drop down should have the following options: Savings, Checking, Loan, Credit Card, Brokerage")
     public void account_drop_down_should_have_the_following_options_Savings_Checking_Loan_Credit_Card_Brokerage(List<String> dataTable) {
         Select select = new Select(new AccountActivity().selectDropDown);
-        Assert.assertEquals(dataTable, BrowserUtils.getElementsText(select.getOptions()));
+        List<String> result= new LinkedList<String>(Arrays.asList());
+        result = dataTable;
+        Set<String> str = new TreeSet<>();
+        for (WebElement option : select.getOptions()) {
+            str.add(option.getText());
+        }
+
+        Collections.reverse(result);
+
+        Assert.assertEquals(str,result);
     }
 
     @Then("Transactions table should have column names Date, Description, Deposit, Withdrawal")

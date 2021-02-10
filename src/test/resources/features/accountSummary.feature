@@ -6,7 +6,7 @@ Feature: Account Summary
     When the user enter valid username and password
 
   Scenario: Page Title
-    Then page should have the title "Zero – Account summary"
+    Then page should have the title "Zero - Account Summary"
 
   Scenario: Account Types
     Then Account summary page should have to following account types: Cash Accounts, Investment Accounts, Credit Accounts, Loan Accounts

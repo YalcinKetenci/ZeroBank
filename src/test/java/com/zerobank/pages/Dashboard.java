@@ -4,10 +4,8 @@ import com.zerobank.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Dashboard extends BasePage{
 
@@ -18,9 +16,9 @@ public class Dashboard extends BasePage{
 
     public String dashboardDefaultTitle = "Zero - Account Summary";
 
-    public void goToModule(String moduleName){
+    public void goToModule(String moduleName) throws InterruptedException {
         Driver.get().findElement(By.xpath("//a[.='"+moduleName+"']")).click();
-
+        Thread.sleep(1000);
     }
 
 }
