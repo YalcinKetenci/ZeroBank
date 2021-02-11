@@ -32,17 +32,20 @@ public class AccountActivityStepDef {
     @Then("Account drop down should have the following options: Savings, Checking, Loan, Credit Card, Brokerage")
     public void account_drop_down_should_have_the_following_options_Savings_Checking_Loan_Credit_Card_Brokerage(List<String> dataTable) {
         Select select = new Select(new AccountActivity().selectDropDown);
-        List<String> result= new LinkedList<String>(Arrays.asList());
-        result = dataTable;
+        Set<String> newDataTable = new TreeSet<>();
+
+        for (String s : dataTable) {
+            newDataTable.add(s);
+        }
+
         Set<String> str = new TreeSet<>();
         for (WebElement option : select.getOptions()) {
             str.add(option.getText());
         }
+        System.out.println(newDataTable);
+        System.out.println(str);
+        Assert.assertEquals(newDataTable,str);
 
-        Collections.reverse(result);
-
-
-        Assert.assertEquals(str,result);
     }
 
     @Then("Transactions table should have column names Date, Description, Deposit, Withdrawal")
