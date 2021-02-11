@@ -27,7 +27,7 @@ public class LoginStepDef {
     }
 
     @When("the user enter invalid username and password")
-    public void the_user_enter_invalid_username_and_password() throws InterruptedException {
+    public void the_user_enter_invalid_username_and_password() {
         new Login().invalidLogin();
     }
 
