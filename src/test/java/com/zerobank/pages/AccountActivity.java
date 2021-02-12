@@ -70,6 +70,7 @@ public class AccountActivity extends BasePage{
         select.selectByValue(typeName.toUpperCase());
 
         findButton.click();
+        BrowserUtils.waitFor(2);
     }
 
     public boolean rangeOfTheDateInTheResult(String from, String to) {

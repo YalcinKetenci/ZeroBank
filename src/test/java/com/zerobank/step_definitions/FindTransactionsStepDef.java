@@ -2,6 +2,7 @@ package com.zerobank.step_definitions;
 
 import com.zerobank.pages.AccountActivity;
 import com.zerobank.pages.PayBills;
+import com.zerobank.utilities.BrowserUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -104,8 +105,8 @@ public class FindTransactionsStepDef {
         for (String s : strList) {
             str+=s;
         }
-        System.out.println(str);
-        Assert.assertFalse(str.isBlank());
+        Assert.assertFalse(str.isBlank()
+        );
     }
 
     @Then("results table should show no result under Withdrawal")
@@ -123,15 +124,11 @@ public class FindTransactionsStepDef {
 
     @Then("results table should show no result under Deposit")
     public void results_table_should_show_no_result_under_Deposit() {
-        List<String> strList = new ArrayList<>();
-        for (WebElement webElement : new AccountActivity().depositsInTheResult) {
-            strList.add(webElement.getText());
-        }
+        List<String> strList = BrowserUtils.getElementsText(new AccountActivity().depositsInTheResult);
         String str ="";
         for (String s : strList) {
             str+=s;
         }
-
         Assert.assertTrue(str.isBlank());
     }
 }
