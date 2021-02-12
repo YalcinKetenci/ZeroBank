@@ -2,6 +2,7 @@ package com.zerobank.step_definitions;
 
 import com.zerobank.pages.AccountActivity;
 import com.zerobank.pages.PayBills;
+import com.zerobank.utilities.BrowserUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -38,15 +39,15 @@ public class FindTransactionsStepDef {
     public void the_results_should_be_sorted_by_most_recent_date() {
 
         for (int i = 0; i < new AccountActivity().getDatesInTheResultAsInteger().size(); i++) {
-           try {
-                   Assert.assertTrue(new AccountActivity().getDatesInTheResultAsInteger().get(i) > new AccountActivity().getDatesInTheResultAsInteger().get(i + 1));
-           }catch (Exception e){}
+            try {
+                Assert.assertTrue(new AccountActivity().getDatesInTheResultAsInteger().get(i) > new AccountActivity().getDatesInTheResultAsInteger().get(i + 1));
+            }catch (Exception e){}
         }
     }
     @Then("the results table should only not contain transactions dated {string}")
     public void the_results_table_should_only_not_contain_transactions_dated(String string) {
         int dateInteger = Integer.parseInt(string.replace("-",""));
-            Assert.assertTrue(dateInteger> _userToDate || dateInteger< _userFromDate);
+        Assert.assertTrue(dateInteger> _userToDate || dateInteger< _userFromDate);
     }
 
     @When("the user enters description {string}")
@@ -104,8 +105,8 @@ public class FindTransactionsStepDef {
         for (String s : strList) {
             str+=s;
         }
-        System.out.println(str);
-        Assert.assertFalse(str.isBlank());
+        Assert.assertFalse(str.isBlank()
+        );
     }
 
     @Then("results table should show no result under Withdrawal")
@@ -123,15 +124,11 @@ public class FindTransactionsStepDef {
 
     @Then("results table should show no result under Deposit")
     public void results_table_should_show_no_result_under_Deposit() {
-        List<String> strList = new ArrayList<>();
-        for (WebElement webElement : new AccountActivity().depositsInTheResult) {
-            strList.add(webElement.getText());
-        }
+        List<String> strList = BrowserUtils.getElementsText(new AccountActivity().depositsInTheResult);
         String str ="";
         for (String s : strList) {
             str+=s;
         }
-
         Assert.assertTrue(str.isBlank());
     }
 }
