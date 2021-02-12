@@ -14,6 +14,7 @@ import org.junit.runner.RunWith;
         dryRun = false,
         //dryRun = true,
         tags = "@allTests"
+        //All Tests DONE!
 )
 
 public class CukesRunner {
