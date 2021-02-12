@@ -10,10 +10,10 @@ import org.junit.runner.RunWith;
                 "html:target/default-html-reports",
                 "rerun:target/rerun.txt"},
         features = "src/test/resources/features",
-        glue = "com/vytrack/step_definitions",
+        glue = "com/zerobank/step_definitions",
         dryRun = false,
         //dryRun = true,
-        tags = "@wip"
+        tags = "@allTests"
 )
 
 public class CukesRunner {

@@ -1,4 +1,4 @@
-@accountActivity
+@accountActivity @allTests
 Feature: Account Activity
 
   Background:

@@ -1,4 +1,4 @@
-@findTransaction
+@findTransaction @allTests
 Feature:Find Transactions in Account Activity
 
   Background:
