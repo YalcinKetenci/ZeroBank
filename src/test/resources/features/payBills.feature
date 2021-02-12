@@ -1,4 +1,4 @@
-@payBills
+@payBills @allTests
 Feature: Pay Bills
     
     Background: 

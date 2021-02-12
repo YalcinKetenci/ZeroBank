@@ -1,4 +1,4 @@
-@login
+@login @allTests
 Feature: User should be able to login
 @valid
   Scenario: Login as a valid credentials

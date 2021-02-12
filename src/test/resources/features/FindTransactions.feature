@@ -1,4 +1,4 @@
-@findTransaction
+@findTransaction @allTests
 Feature:Find Transactions in Account Activity
 
   Background:
@@ -33,7 +33,9 @@ Feature:Find Transactions in Account Activity
     When the user enters description "online"
     And clicks search
     Then results table should only show descriptions containing "ONLINE"
+
 @wip
+
   Scenario: Type
     And clicks search
     Then results table should show at least one result under Deposit
