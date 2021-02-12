@@ -1,4 +1,4 @@
-@accountSummary
+@accountSummary @allTests
 Feature: Account Summary
 
   Background:

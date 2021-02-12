@@ -1,4 +1,4 @@
-@foreign
+@foreign @allTests
 Feature: Purchase Foreign Currency
 
   Background:

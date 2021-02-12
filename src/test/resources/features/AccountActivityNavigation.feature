@@ -1,4 +1,4 @@
-@accountActivityNav
+@accountActivityNav @allTests
 Feature: Navigating to specific accounts in Accounts Activity
 
   Background:
