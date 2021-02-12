@@ -2,6 +2,7 @@ package com.zerobank.step_definitions;
 
 import com.zerobank.pages.AccountActivity;
 import com.zerobank.pages.PayBills;
+import com.zerobank.utilities.BrowserUtils;
 import com.zerobank.utilities.Driver;
 import io.cucumber.java.bs.A;
 import io.cucumber.java.en.Given;
@@ -132,6 +133,7 @@ public class FindTransactionsStepDef {
         for (String s : strList) {
             str+=s;
         }
+        //System.out.println(str);
         Assert.assertTrue(str.isBlank());
     }
 
