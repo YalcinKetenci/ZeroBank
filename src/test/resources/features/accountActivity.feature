@@ -11,7 +11,7 @@ Feature: Account Activity
 
   Scenario: Default option
     Then In the Account drop down default option should be "Savings"
-  @wip
+
   Scenario: Account DropDown Options
     Then Account drop down should have the following options: Savings, Checking, Loan, Credit Card, Brokerage
       | Savings     |
